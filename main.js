@@ -1,6 +1,3 @@
-let headers = new Headers();
-headers.append('Origin', 'http://localhost:3006');
-
 
 Vue.component('posts', {
     props: [],
@@ -10,7 +7,6 @@ Vue.component('posts', {
             postsAll: [],
         }
     },
-
     template: `
         <div class="posts">
             <div class="search"><input class="search-input" type="search"><i v-on:click="search"
@@ -110,6 +106,8 @@ Vue.component('posts', {
         }
     },
     mounted: function () {
+        let headers = new Headers();
+        headers.append('Origin', 'http://localhost:3006');
         // `this` указывает на экземпляр компонента
         let result = fetch('http://localhost:3006/test.json', {
             headers: headers
