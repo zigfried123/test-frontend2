@@ -65,6 +65,9 @@ Vue.component('posts', {
             });
         },
         remove(e) {
+
+            $(e.target).css('background', 'white');
+
             let id = $(e.target).parent().attr('id');
 
             let postIndex = this.posts.findIndex(v => {
