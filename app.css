@@ -1,9 +1,12 @@
+.posts{
+    width:1000px;
+}
 .search-input {
     width: 500px
 }
 
 .post-new-input {
-    display: none;
+
     width: 500px
 }
 
