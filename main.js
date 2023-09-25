@@ -21,7 +21,7 @@ Vue.component('posts', {
             </div>
             <div class="post-row" :id="post.id" v-for="post in posts">
 
-                <span v-on:click="changeColor" class="text-success">{{ post.name }}</span>
+                <span v-on:click="changeColor" class="post-name text-success">{{ post.name }}</span>
                 <i v-on:click="edit" class="bi-pencil-square edit-post"
                    style="font-size: 2rem; color: cornflowerblue;"></i>
                 <i v-on:click="remove" class="bi-x-lg delete-post" style="font-size: 2rem; color: cornflowerblue;"></i>
@@ -66,7 +66,7 @@ Vue.component('posts', {
         },
         remove(e) {
 
-            $(e.target).css('background', 'white');
+            $(e.target).parent('.post-row').find('.post-name').css('background', 'white');
 
             let id = $(e.target).parent().attr('id');
 
