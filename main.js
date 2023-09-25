@@ -1,15 +1,3 @@
-const store = new Vuex.Store({
-    state: {
-        count: 0
-    },
-    mutations: {
-        editNewPost(state) {
-            state.count++
-        }
-    }
-})
-
-
 let headers = new Headers();
 headers.append('Origin', 'http://localhost:3006');
 
