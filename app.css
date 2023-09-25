@@ -1,0 +1,28 @@
+.search-input {
+    width: 500px
+}
+
+.post-new-input {
+    display: none;
+    width: 500px
+}
+
+.search-post-button {
+    font-size: 2rem;
+    color: cornflowerblue;
+}
+
+.add-post-button {
+    font-size: 2rem;
+    color: cornflowerblue;
+}
+
+.edit-post-button {
+    font-size: 2rem;
+    color: cornflowerblue
+}
+
+.delete-post-button {
+    font-size: 2rem;
+    color: cornflowerblue;
+}

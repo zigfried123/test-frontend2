@@ -13,21 +13,17 @@ Vue.component('posts', {
 
     template: `
         <div class="posts">
-            <div class="search"><input style="width:500px" type="search"><i v-on:click="search"
-                                                                            style="font-size: 2rem; color: cornflowerblue;"
-                                                                            class="bi bi-search"></i></div>
-            <div style="text-align:right"><input style="display:none;width:500px" class="post-new-input"><i
-                    v-on:click="add" class="bi-file-plus add-post" style="font-size: 2rem; color: cornflowerblue;"></i>
+            <div class="search"><input class="search-input" type="search"><i v-on:click="search"
+                                                                             class="bi bi-search search-post-button"></i>
+            </div>
+            <div style="text-align:right"><input class="post-new-input"><i
+                    v-on:click="add" class="bi-file-plus add-post-button"></i>
             </div>
             <div class="post-row" :id="post.id" v-for="post in posts">
-
                 <span v-on:click="changeColor" class="post-name text-success">{{ post.name }}</span>
-                <i v-on:click="edit" class="bi-pencil-square edit-post"
-                   style="font-size: 2rem; color: cornflowerblue;"></i>
-                <i v-on:click="remove" class="bi-x-lg delete-post" style="font-size: 2rem; color: cornflowerblue;"></i>
-
+                <i v-on:click="edit" class="bi-pencil-square edit-post-button"></i>
+                <i v-on:click="remove" class="bi-x-lg delete-post-button"></i>
             </div>
-
         </div>`,
 
     methods: {
@@ -89,13 +85,13 @@ Vue.component('posts', {
         edit(e) {
             let id = $(e.target).parent().attr('id');
             let buttonEdit = $(e.target);
-            let buttonDelete = $(e.target).next('.delete-post');
+            let buttonDelete = $(e.target).next('.delete-post-button');
             let postEl = $(buttonEdit).prev();
             let editValue = $(postEl).text();
 
             $(e.target).before(`<input class="post-input" style="width:${$(postEl).width()}" type="text" value="${editValue}">`);
             $(postEl).hide();
-            
+
             buttonEdit.hide();
             buttonDelete.hide();
 
